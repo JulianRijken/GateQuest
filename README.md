@@ -21,5 +21,5 @@ Week ... ->
 - [ ] ... and more
 
 - [ ] Publish project on Itch.io so students can play :)
- - [ ] Screenshots? 
- - [ ] Trailer?
+  - [ ] Screenshots? 
+  - [ ] Trailer?
