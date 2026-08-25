@@ -1,5 +1,5 @@
 # GateQuest
-//TODO: Vun in info over het project
+// TODO: Vun in info over het project
 
 # Tijd
 ~30 lessen, ~45 uur
