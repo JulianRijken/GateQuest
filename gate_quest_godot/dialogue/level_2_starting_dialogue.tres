@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://bilwdcyrsa5ln"]
+
+[ext_resource type="Script" uid="uid://cl1lcc4lp2oh4" path="res://dialogue.gd" id="1_lcwos"]
+
+[resource]
+script = ExtResource("1_lcwos")
+text = "Hello how are you doing?"
+option_a_text = "Good"
+has_option_a = true
+option_b_text = "Bad"
+has_option_b = true
+option_c_text = "Fuck u"
+has_option_c = true
+metadata/_custom_type_script = "uid://cl1lcc4lp2oh4"

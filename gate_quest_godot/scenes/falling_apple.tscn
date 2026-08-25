@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://11w20fnkrdxi"]
+
+[ext_resource type="Texture2D" uid="uid://dbxb602buq7wu" path="res://assets/sprites/fruit.png" id="1_id6fq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kvpfn"]
+bounce = 0.7
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vtaks"]
+radius = 5.0
+
+[node name="FallingApple" type="RigidBody2D" unique_id=796879559]
+collision_layer = 4
+physics_material_override = SubResource("PhysicsMaterial_kvpfn")
+can_sleep = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1028004394]
+shape = SubResource("CircleShape2D_vtaks")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1136585922]
+position = Vector2(0, -2)
+texture = ExtResource("1_id6fq")
+region_enabled = true
+region_rect = Rect2(0, 48, 16, 16)

@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://cm51x3sk2dro0"]
+
+[ext_resource type="Script" uid="uid://dsy3bv8ao00bt" path="res://scenes/npc.gd" id="1_3w2wa"]
+[ext_resource type="Texture2D" uid="uid://d3gw3ysjstkwx" path="res://assets/sprites/NPC1.png" id="1_ttshn"]
+[ext_resource type="Texture2D" uid="uid://b8fufxhnuy2g5" path="res://assets/sprites/NPC1-2-2.png" id="2_rga5l"]
+[ext_resource type="Resource" uid="uid://bilwdcyrsa5ln" path="res://dialogue/level_2_starting_dialogue.tres" id="2_xr7qm"]
+[ext_resource type="PackedScene" uid="uid://dhfdsc412b2ei" path="res://scenes/interactable.tscn" id="3_rga5l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnkej"]
+atlas = ExtResource("1_ttshn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm8aj"]
+atlas = ExtResource("1_ttshn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtwp4"]
+atlas = ExtResource("1_ttshn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwr0g"]
+atlas = ExtResource("1_ttshn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bahl2"]
+atlas = ExtResource("2_rga5l")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_np2pn"]
+atlas = ExtResource("2_rga5l")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6ha0"]
+atlas = ExtResource("2_rga5l")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmpev"]
+atlas = ExtResource("2_rga5l")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkypq"]
+atlas = ExtResource("2_rga5l")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndtll"]
+atlas = ExtResource("2_rga5l")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h2jl"]
+atlas = ExtResource("2_rga5l")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqh5v"]
+atlas = ExtResource("2_rga5l")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bahl2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnkej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm8aj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtwp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwr0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bahl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_np2pn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6ha0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmpev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkypq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndtll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h2jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqh5v")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.7
+}]
+
+[node name="NPC1" type="Node2D" unique_id=340014486]
+script = ExtResource("1_3w2wa")
+dialogue = ExtResource("2_xr7qm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=521501798]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_bahl2")
+animation = &"idle"
+autoplay = "idle"
+frame = 9
+frame_progress = 0.21464102
+flip_h = true
+
+[node name="Interactable" parent="." unique_id=137774548 instance=ExtResource("3_rga5l")]
+position = Vector2(0, -9)
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

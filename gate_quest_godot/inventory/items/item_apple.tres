@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bf8iqltluu0rb"]
+
+[ext_resource type="Script" uid="uid://br0f66ylypvrd" path="res://inventory/item_data.gd" id="1_jlavl"]
+[ext_resource type="Texture2D" uid="uid://m672vm4wen7i" path="res://assets/sprites/RavenFantasyIcons.png" id="2_jlavl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcxqw"]
+atlas = ExtResource("2_jlavl")
+region = Rect2(32, 432, 16, 16)
+
+[resource]
+script = ExtResource("1_jlavl")
+name = "Apple"
+description = "Hey apple! This is totally not a worthless item..."
+texture = SubResource("AtlasTexture_gcxqw")
+is_stackable = true
+metadata/_custom_type_script = "uid://br0f66ylypvrd"

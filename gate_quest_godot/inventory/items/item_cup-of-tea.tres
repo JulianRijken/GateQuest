@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dc3auqaseylpw"]
+
+[ext_resource type="Script" uid="uid://br0f66ylypvrd" path="res://inventory/item_data.gd" id="1_lbp02"]
+[ext_resource type="Texture2D" uid="uid://m672vm4wen7i" path="res://assets/sprites/RavenFantasyIcons.png" id="2_35hbq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qieb4"]
+atlas = ExtResource("2_35hbq")
+region = Rect2(0, 528, 16, 16)
+
+[resource]
+script = ExtResource("1_lbp02")
+name = "Cup of Tea"
+description = "A delicious cup of tea. It might be usefull for quenching someone's thirst..."
+texture = SubResource("AtlasTexture_qieb4")
+is_consumable = true
+consume_health_gain = 2
+metadata/_custom_type_script = "uid://br0f66ylypvrd"

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://cqiipya4n8daf"]
+
+[ext_resource type="Texture2D" uid="uid://m672vm4wen7i" path="res://assets/sprites/RavenFantasyIcons.png" id="1_geblh"]
+
+[resource]
+atlas = ExtResource("1_geblh")
+region = Rect2(240, 1376, 16, 16)

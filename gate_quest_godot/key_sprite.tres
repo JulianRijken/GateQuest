@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dltw4rcbwtab0"]
+
+[ext_resource type="Texture2D" uid="uid://m672vm4wen7i" path="res://assets/sprites/RavenFantasyIcons.png" id="1_enaj8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enaj8"]
+atlas = ExtResource("1_enaj8")
+region = Rect2(176, 64, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enaj8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]

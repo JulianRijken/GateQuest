@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://85rsxnl3njbr"]
+
+[ext_resource type="Script" uid="uid://br0f66ylypvrd" path="res://inventory/item_data.gd" id="1_ne8ln"]
+[ext_resource type="Texture2D" uid="uid://n00ypp8x442j" path="res://assets/sprites/key_texture.tres" id="2_yppmc"]
+
+[resource]
+script = ExtResource("1_ne8ln")
+name = "Key"
+description = "A key. It might be usefull for opening a door..."
+texture = ExtResource("2_yppmc")
+metadata/_custom_type_script = "uid://br0f66ylypvrd"

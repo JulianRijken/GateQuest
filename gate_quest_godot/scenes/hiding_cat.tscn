@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cxf1tw22fytmi"]
+
+[ext_resource type="Script" uid="uid://dareejmnj8uv" path="res://scenes/hiding_cat.gd" id="1_uaw16"]
+[ext_resource type="Texture2D" uid="uid://qqsyx1e7v2fu" path="res://assets/sprites/world_tileset.png" id="1_xki7o"]
+[ext_resource type="Texture2D" uid="uid://cef2nlnysunjt" path="res://assets/sprites/cat-sprite-2.png" id="2_7hnyh"]
+[ext_resource type="PackedScene" uid="uid://dhfdsc412b2ei" path="res://scenes/interactable.tscn" id="3_ftgsx"]
+[ext_resource type="AudioStream" uid="uid://cje5cemqcie1j" path="res://assets/sounds/senior-cat-meow.mp3" id="5_m70rb"]
+[ext_resource type="AudioStream" uid="uid://bfmt2ym8tqn37" path="res://assets/sounds/falling_cat.wav" id="6_cmvdo"]
+
+[sub_resource type="Animation" id="Animation_m70rb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RotatePoint/Cat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_uaw16"]
+resource_name = "cat_hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RotatePoint/Cat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, -2), Vector2(0, 4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m70rb"]
+_data = {
+&"RESET": SubResource("Animation_m70rb"),
+&"cat_hide": SubResource("Animation_uaw16")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m70rb"]
+radius = 5.0
+
+[node name="HidingCat" type="RigidBody2D" unique_id=1667985816]
+collision_layer = 4
+gravity_scale = 0.2
+can_sleep = false
+lock_rotation = true
+freeze = true
+script = ExtResource("1_uaw16")
+hide_speed = -0.1
+meow_sound_threshold = 0.4
+
+[node name="RotatePoint" type="Node2D" parent="." unique_id=1489469584]
+position = Vector2(0, -8)
+
+[node name="Cat" type="Sprite2D" parent="RotatePoint" unique_id=1890409018]
+position = Vector2(0, -2)
+texture = ExtResource("2_7hnyh")
+
+[node name="Bush" type="Sprite2D" parent="RotatePoint" unique_id=1055425183]
+texture = ExtResource("1_xki7o")
+region_enabled = true
+region_rect = Rect2(16, 64, 16, 16)
+
+[node name="Interactable" parent="." unique_id=137774548 instance=ExtResource("3_ftgsx")]
+position = Vector2(0, -9)
+is_interactable = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1852929634]
+libraries/ = SubResource("AnimationLibrary_m70rb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1816747391]
+stream = ExtResource("5_m70rb")
+volume_db = 5.0
+pitch_scale = 1.2
+bus = &"SFX"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1966842357]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_m70rb")
+
+[node name="FallingSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=2022505019]
+stream = ExtResource("6_cmvdo")
+
+[connection signal="entered" from="Interactable" to="." method="_on_interactable_entered"]
+[connection signal="exited" from="Interactable" to="." method="_on_interactable_exited"]

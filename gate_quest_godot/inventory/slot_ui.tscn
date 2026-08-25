@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cc0v1ih1lelou"]
+
+[ext_resource type="Script" uid="uid://dpjieg5eatwb2" path="res://inventory/slot_ui.gd" id="1_dttnm"]
+[ext_resource type="FontFile" uid="uid://x2iclcplexev" path="res://assets/fonts/PixelOperator8.ttf" id="3_wmjex"]
+
+[sub_resource type="Gradient" id="Gradient_dttnm"]
+colors = PackedColorArray(0.080783345, 0.080783345, 0.080783345, 1, 0.18878606, 0.21003503, 0.1625346, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wmjex"]
+gradient = SubResource("Gradient_dttnm")
+fill_to = Vector2(1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nl70e"]
+font = ExtResource("3_wmjex")
+
+[node name="SlotUI" type="Panel" unique_id=2008383236]
+custom_minimum_size = Vector2(75, 75)
+offset_right = 75.0
+offset_bottom = 75.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_dttnm")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=932123435]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=300617066]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_wmjex")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemCountLabel" type="Label" parent="MarginContainer" unique_id=623111282]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "999"
+label_settings = SubResource("LabelSettings_nl70e")

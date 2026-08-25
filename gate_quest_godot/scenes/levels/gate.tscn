@@ -1,0 +1,36 @@
+[gd_scene format=4 uid="uid://b52smmqdevady"]
+
+[ext_resource type="TileSet" uid="uid://bujlanysuf07f" path="res://main_tile_set.tres" id="1_dhssn"]
+[ext_resource type="Script" uid="uid://4cy2psklsntd" path="res://scenes/levels/gate.gd" id="1_xf2l6"]
+[ext_resource type="Texture2D" uid="uid://qqsyx1e7v2fu" path="res://assets/sprites/world_tileset.png" id="2_avsut"]
+[ext_resource type="PackedScene" uid="uid://dhfdsc412b2ei" path="res://scenes/interactable.tscn" id="3_re1d3"]
+[ext_resource type="Resource" uid="uid://85rsxnl3njbr" path="res://inventory/items/item_key.tres" id="5_rfnou"]
+[ext_resource type="AudioStream" uid="uid://wqfcin0or73p" path="res://assets/interface-sounds/open_001.ogg" id="6_lvfov"]
+
+[node name="Gate" type="Node2D" unique_id=1367748355]
+script = ExtResource("1_xf2l6")
+
+[node name="Gate" type="TileMapLayer" parent="." unique_id=408095831]
+z_index = 100
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAPv/AAAJAAMAAAAAAPz/AAAHAAQAAAAAAP3/AAAHAAQAAAAAAP7/AAAHAAQAAAAAAP//AAAHAAQAAAABAPz/AAAKAAEAAAABAP3/AAAHAAQAAAABAP7/AAAHAAQAAAABAP//AAAHAAQAAAACAPv/AAAJAAMAAAACAPz/AAAHAAQAAAACAP3/AAAHAAQAAAACAP7/AAAHAAQAAAACAP//AAAHAAQAAAA=")
+tile_set = ExtResource("1_dhssn")
+
+[node name="Sign" type="Sprite2D" parent="." unique_id=1851486087]
+position = Vector2(-22, -8)
+texture = ExtResource("2_avsut")
+region_enabled = true
+region_rect = Rect2(128, 64, 16, 16)
+
+[node name="Interactable" parent="." unique_id=137774548 instance=ExtResource("3_re1d3")]
+position = Vector2(-21, -2)
+required_item = ExtResource("5_rfnou")
+
+[node name="GateOpenSound" type="AudioStreamPlayer2D" parent="." unique_id=1450249711]
+stream = ExtResource("6_lvfov")
+
+[node name="Timer" type="Timer" parent="." unique_id=1442600437]
+one_shot = true
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

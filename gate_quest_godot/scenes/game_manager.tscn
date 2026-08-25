@@ -1,0 +1,324 @@
+[gd_scene format=3 uid="uid://b71b8482a8t0n"]
+
+[ext_resource type="Script" uid="uid://givh8ea1sdom" path="res://scripts/game_manager.gd" id="1_glms7"]
+[ext_resource type="Resource" uid="uid://djxc88q5niu0i" path="res://inventory/player_inventory.tres" id="2_oo155"]
+[ext_resource type="FontFile" uid="uid://x2iclcplexev" path="res://assets/fonts/PixelOperator8.ttf" id="2_udu3i"]
+[ext_resource type="PackedScene" uid="uid://dghigwi8wlaaw" path="res://inventory/inventory_ui.tscn" id="3_eaq8r"]
+[ext_resource type="AudioStream" uid="uid://dcyg2lwdyimly" path="res://assets/interface-sounds/pluck_002.ogg" id="3_q8mjp"]
+[ext_resource type="AudioStream" uid="uid://byeca2s2uyv2v" path="res://assets/interface-sounds/pluck_001.ogg" id="3_ternb"]
+[ext_resource type="FontFile" uid="uid://dc32unk737b2b" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_udu3i"]
+
+[sub_resource type="Animation" id="Animation_udu3i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.81960785, 0.078431375, 0.21176471, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(166, -143.755)]
+}
+
+[sub_resource type="Animation" id="Animation_oo155"]
+resource_name = "game_over"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.81960785, 0.078431375, 0.21176471, 0), Color(0.81960785, 0.078431375, 0.21176471, 0.34509805), Color(0.81960785, 0.078431375, 0.21176471, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 2.5333333),
+"transitions": PackedFloat32Array(0.28717482, 1, 0.12074213),
+"update": 0,
+"values": [Vector2(166, -120.98), Vector2(166, 271), Vector2(1990.19, 271)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"restart_game"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eaq8r"]
+_data = {
+&"RESET": SubResource("Animation_udu3i"),
+&"game_over": SubResource("Animation_oo155")
+}
+
+[sub_resource type="Animation" id="Animation_ternb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/InventoryUI:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/InventoryUI:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/InventoryUI:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q8mjp"]
+resource_name = "close_inventory"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/InventoryUI:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.43527535, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/InventoryUI:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/InventoryUI:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_q8mjp")
+}],
+"times": PackedFloat32Array(0.007011175)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_eaq8r"]
+resource_name = "open_inventory"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/InventoryUI:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.36602157, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/InventoryUI:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/InventoryUI:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ternb")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ternb"]
+_data = {
+&"RESET": SubResource("Animation_ternb"),
+&"close_inventory": SubResource("Animation_q8mjp"),
+&"open_inventory": SubResource("Animation_eaq8r")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_vef74"]
+font = ExtResource("2_udu3i")
+font_size = 32
+font_color = Color(1, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oo155"]
+font = ExtResource("3_udu3i")
+font_size = 95
+font_color = Color(0.9607282, 0.981646, 0.75073415, 1)
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GameManager" type="Node" unique_id=719424245]
+process_mode = 3
+script = ExtResource("1_glms7")
+inventory = ExtResource("2_oo155")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=583019591]
+bus = &"SFX"
+
+[node name="GameOverAnimation" type="AnimationPlayer" parent="." unique_id=41260003]
+root_node = NodePath("../CanvasLayer/GameOverScreen")
+libraries/ = SubResource("AnimationLibrary_eaq8r")
+
+[node name="InventoryAnimation" type="AnimationPlayer" parent="." unique_id=1625101936]
+libraries/ = SubResource("AnimationLibrary_ternb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=620611435]
+
+[node name="InventoryUI" parent="CanvasLayer" unique_id=940596079 instance=ExtResource("3_eaq8r")]
+visible = false
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=2025464043]
+visible = false
+offset_left = 20.0
+offset_top = 29.0
+offset_right = 265.0
+offset_bottom = 83.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=212361700]
+visible = false
+offset_left = 38.0
+offset_top = 41.0
+offset_right = 136.0
+offset_bottom = 64.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Coins: 0"
+label_settings = SubResource("LabelSettings_vef74")
+
+[node name="GameOverScreen" type="Node" parent="CanvasLayer" unique_id=1295774290]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GameOverScreen" unique_id=656176984]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.81960785, 0.078431375, 0.21176471, 0)
+
+[node name="Label" type="Label" parent="CanvasLayer/GameOverScreen" unique_id=83851135]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -410.0
+offset_top = -467.755
+offset_right = 410.00098
+offset_bottom = -371.75488
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_oo155")
+
+[node name="SceneTransition" type="Node" parent="CanvasLayer" unique_id=1323743444]
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer/SceneTransition" unique_id=1155538191]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)

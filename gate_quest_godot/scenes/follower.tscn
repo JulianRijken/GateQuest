@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bt3b0ghryvotr"]
+
+[ext_resource type="Texture2D" uid="uid://m672vm4wen7i" path="res://assets/sprites/RavenFantasyIcons.png" id="1_3sxqj"]
+[ext_resource type="Script" path="res://scenes/follower.gd" id="1_m7jt8"]
+
+[node name="Follower" type="Node2D" unique_id=1457946032]
+script = ExtResource("1_m7jt8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1193873318]
+texture = ExtResource("1_3sxqj")
+region_enabled = true
+region_rect = Rect2(176, 896, 16, 16)

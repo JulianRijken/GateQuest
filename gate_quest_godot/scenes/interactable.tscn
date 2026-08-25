@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://dhfdsc412b2ei"]
+
+[ext_resource type="Script" uid="uid://bg0oon43k2e0k" path="res://scripts/interactable.gd" id="1_56v82"]
+[ext_resource type="FontFile" uid="uid://x2iclcplexev" path="res://assets/fonts/PixelOperator8.ttf" id="2_ij5l6"]
+[ext_resource type="AudioStream" uid="uid://crrv01cqc47vk" path="res://assets/interface-sounds/error_007.ogg" id="3_8o6w2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3aalw"]
+radius = 35.0
+
+[sub_resource type="Animation" id="Animation_ij5l6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Info:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Info:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8o6w2"]
+resource_name = "show_info"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-8, 0), Vector2(-8, -30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Info:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.26666668, 0.5),
+"transitions": PackedFloat32Array(0.3535535, 1),
+"update": 0,
+"values": [Vector2(0, 0.6), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Info:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.16666667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w4xns"]
+_data = {
+&"RESET": SubResource("Animation_ij5l6"),
+&"show_info": SubResource("Animation_8o6w2")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_8o6w2"]
+font = ExtResource("2_ij5l6")
+font_size = 8
+font_color = Color(0.82, 0.895, 1, 1)
+
+[node name="Interactable" type="Area2D" unique_id=137774548]
+collision_mask = 2
+script = ExtResource("1_56v82")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=961101055]
+shape = SubResource("CircleShape2D_3aalw")
+
+[node name="ShowAnimation" type="AnimationPlayer" parent="." unique_id=1718225232]
+libraries/ = SubResource("AnimationLibrary_w4xns")
+
+[node name="Info" type="Panel" parent="." unique_id=1567993296]
+modulate = Color(1, 1, 1, 0)
+offset_left = -8.0
+offset_right = 5.0
+offset_bottom = 13.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Info" unique_id=974281385]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "E"
+label_settings = SubResource("LabelSettings_8o6w2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemContainer" type="MarginContainer" parent="Info" unique_id=1856062804]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="Item" type="TextureRect" parent="Info/ItemContainer" unique_id=1948734238]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NoItemSound" type="AudioStreamPlayer2D" parent="." unique_id=969623464]
+stream = ExtResource("3_8o6w2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
