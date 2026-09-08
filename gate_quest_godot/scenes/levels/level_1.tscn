@@ -286,7 +286,7 @@ occluder = SubResource("OccluderPolygon2D_mm8aj")
 [node name="Gate" parent="." unique_id=1367748355 instance=ExtResource("17_bahl2")]
 position = Vector2(976, -96)
 
-[node name="Node" type="Node" parent="." unique_id=1124154931]
+[node name="Node" type="Node" parent="." unique_id=875854818]
 script = ExtResource("16_iwr0g")
 
 [connection signal="body_entered" from="Level/HiddenArea/LightReveal" to="Level/HiddenArea" method="_on_light_reveal_body_entered"]
