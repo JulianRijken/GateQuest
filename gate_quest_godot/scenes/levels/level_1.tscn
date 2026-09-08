@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://11w20fnkrdxi" path="res://scenes/falling_apple.tscn" id="10_iav0o"]
 [ext_resource type="Script" uid="uid://bbk0hbynmaxth" path="res://scenes/levels/hidden_area.gd" id="11_wtwp4"]
 [ext_resource type="PackedScene" uid="uid://cm51x3sk2dro0" path="res://scenes/npc_1.tscn" id="14_wtwp4"]
+[ext_resource type="Script" uid="uid://csv4h1uggv2u" path="res://scripts/virus.gd" id="16_iwr0g"]
 [ext_resource type="PackedScene" uid="uid://b52smmqdevady" path="res://scenes/levels/gate.tscn" id="17_bahl2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6761a"]
@@ -284,6 +285,9 @@ occluder = SubResource("OccluderPolygon2D_mm8aj")
 
 [node name="Gate" parent="." unique_id=1367748355 instance=ExtResource("17_bahl2")]
 position = Vector2(976, -96)
+
+[node name="Node" type="Node" parent="." unique_id=1124154931]
+script = ExtResource("16_iwr0g")
 
 [connection signal="body_entered" from="Level/HiddenArea/LightReveal" to="Level/HiddenArea" method="_on_light_reveal_body_entered"]
 [connection signal="body_exited" from="Level/HiddenArea/LightReveal" to="Level/HiddenArea" method="_on_light_reveal_body_exited"]
