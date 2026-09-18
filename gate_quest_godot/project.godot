@@ -30,6 +30,10 @@ GameManager="*uid://b71b8482a8t0n"
 PlayerPrefs="*uid://dxnwp4c3ffj0p"
 DialogueSystem="*uid://d01cot3o0j3w1"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/PlayerPrefs/plugin.cfg", "res://addons/playerprefs/plugin.cfg")
