@@ -231,9 +231,6 @@ collision_layer = 3
 position = Vector2(146, 0.5)
 shape = SubResource("RectangleShape2D_j5wjh")
 
-[node name="BreakingPlatform" parent="Level" unique_id=1273566656 instance=ExtResource("6_pkq2k")]
-position = Vector2(782, 4)
-
 [node name="BreakingPlatform2" parent="Level" unique_id=1000608505 instance=ExtResource("6_pkq2k")]
 position = Vector2(753, -171)
 
@@ -307,13 +304,13 @@ position = Vector2(1264, -161)
 position = Vector2(952, -139)
 
 [node name="MovingPlatform" parent="Level" unique_id=1870493796 instance=ExtResource("10_ujspt")]
-position = Vector2(437, 6)
+position = Vector2(437, 5)
 
 [node name="MovingPlatform2" parent="Level" unique_id=1476839577 instance=ExtResource("10_ujspt")]
 position = Vector2(578, 5)
 
 [node name="AnimationPlayer3" parent="Level/MovingPlatform2" index="0" unique_id=504115559]
-speed_scale = 1.4
+speed_scale = 0.5
 
 [node name="BreakingPlatform11" parent="Level" unique_id=1962158949 instance=ExtResource("6_pkq2k")]
 position = Vector2(-105, 10)
@@ -425,12 +422,16 @@ death_slow_down_speed = 200.0
 physics_interpolation_mode = 2
 position = Vector2(-6, 13)
 zoom = Vector2(4, 4)
-limit_top = -9999999
+limit_top = -9999997
 limit_right = 1535
-limit_bottom = 65
+limit_bottom = 67
 position_smoothing_enabled = true
 
+[node name="platform" parent="." unique_id=1079067649 instance=ExtResource("4_xoedk")]
+position = Vector2(780, 5)
+
 [editable path="Level/Chest2"]
+[editable path="Level/MovingPlatform"]
 [editable path="Level/MovingPlatform2"]
 [editable path="Level/MovingPlatform3"]
 [editable path="Level/MovingPlatform3/platform"]
