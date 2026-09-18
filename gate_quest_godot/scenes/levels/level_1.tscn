@@ -276,7 +276,7 @@ position_smoothing_enabled = true
 position = Vector2(791, -153)
 
 [node name="NPC1" parent="." unique_id=1487969349 instance=ExtResource("14_wtwp4")]
-position = Vector2(-71, -14)
+position = Vector2(-72, 0)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1875528933]
 position = Vector2(911, -123)
