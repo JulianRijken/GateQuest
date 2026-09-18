@@ -25,7 +25,7 @@ Besproken tijdens de les:
 - Eerste uur samen werken aan GateQuest
 - Tweede uur begeleidt werken aan eigen projecten / GateQuest
 
-## Week 4 (15 sep)
+## Week 4 (18 sep)
 - Git opzetten met de studenten
 - Godot opzetten
 - Hebben over story points / scrum
@@ -63,5 +63,4 @@ totaal budget buiten de les = 20
   
 
 # TODO
-- [ ] Add visual keys on screen
-- [ ] Find out why I can't find all the nodes under the root object
+- [X] Add visual keys on screen
