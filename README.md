@@ -63,5 +63,4 @@ totaal budget buiten de les = 20
   
 
 # TODO
-- [ ] Add visual keys on screen
-- [ ] Find out why I can't find all the nodes under the root object
+- [X] Add visual keys on screen
