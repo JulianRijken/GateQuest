@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dve8hfghfvdfr" path="res://scenes/player.tscn" id="3_l37oo"]
 [ext_resource type="PackedScene" uid="uid://cm51x3sk2dro0" path="res://scenes/npc_1.tscn" id="3_qpwj6"]
 [ext_resource type="PackedScene" uid="uid://b52smmqdevady" path="res://scenes/levels/gate.tscn" id="4_fiq81"]
+[ext_resource type="PackedScene" uid="uid://cmhvtqb5hmlb8" path="res://scenes/killzone.tscn" id="6_qpwj6"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ibugp"]
 
 [node name="LevelIntro" type="Node2D" unique_id=1708571629]
 
@@ -34,3 +37,10 @@ position_smoothing_enabled = true
 
 [node name="Gate" parent="." unique_id=1367748355 node_paths=PackedStringArray("starting_player") instance=ExtResource("4_fiq81")]
 starting_player = NodePath("../Player")
+
+[node name="KillZone" parent="." unique_id=1318448053 instance=ExtResource("6_qpwj6")]
+position = Vector2(-181, 81)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=1066493839]
+position = Vector2(0, 5)
+shape = SubResource("WorldBoundaryShape2D_ibugp")
