@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dgnk68hnnlid7" path="res://scenes/sky_day.tscn" id="1_nsrm0"]
 [ext_resource type="TileSet" uid="uid://bujlanysuf07f" path="res://main_tile_set.tres" id="2_x42e6"]
 [ext_resource type="PackedScene" uid="uid://dve8hfghfvdfr" path="res://scenes/player.tscn" id="3_6761a"]
+[ext_resource type="Texture2D" uid="uid://qqsyx1e7v2fu" path="res://assets/sprites/world_tileset.png" id="3_iwr0g"]
 [ext_resource type="PackedScene" uid="uid://cmhvtqb5hmlb8" path="res://scenes/killzone.tscn" id="3_x42e6"]
 [ext_resource type="PackedScene" uid="uid://82f7iyhvb6xt" path="res://scenes/moving_platform.tscn" id="4_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://srmn73pvqxi" path="res://scenes/platform.tscn" id="5_mm8aj"]
@@ -129,6 +130,9 @@ polygon = PackedVector2Array(-45, 58, -46, 44, -29, 43, -29, 27, 81, 27, 80, 141
 
 [node name="SkyDay" parent="Level" unique_id=2013596586 instance=ExtResource("1_nsrm0")]
 
+[node name="FallingApple" parent="Level" unique_id=796879559 instance=ExtResource("10_iav0o")]
+position = Vector2(816, -68)
+
 [node name="CaveLayerProps" type="TileMapLayer" parent="Level" unique_id=809762563]
 modulate = Color(0.5037685, 0.5037685, 0.50376844, 1)
 z_index = -30
@@ -136,6 +140,13 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAAzAP3/AAABAAgAAAA=")
 tile_set = ExtResource("2_x42e6")
 collision_enabled = false
+
+[node name="FallenTree" type="Sprite2D" parent="Level" unique_id=462505550]
+position = Vector2(822, -100)
+rotation = 1.5319852
+texture = ExtResource("3_iwr0g")
+region_enabled = true
+region_rect = Rect2(40.136417, 75.636375, 32.499996, 50.417297)
 
 [node name="ForegroundLayer" type="TileMapLayer" parent="Level" unique_id=1029169275]
 use_parent_material = true
@@ -251,7 +262,7 @@ shape = SubResource("RectangleShape2D_mm8aj")
 [node name="Reveal" type="Node2D" parent="Level/HiddenArea" unique_id=243257505]
 
 [node name="CaveReveal" type="TileMapLayer" parent="Level/HiddenArea/Reveal" unique_id=1593673854]
-z_index = -20
+z_index = 10
 use_parent_material = true
 position = Vector2(-886, 64)
 tile_map_data = PackedByteArray("AAAzAP3/AAAFAAEAAAA0AP3/AAAEAAEAAAA1AP3/AAAFAAAAAAA2AP3/AAAEAAEAAAA3AP3/AAAEAAEAAAA4AP3/AAAEAAEAAAA5AP3/AAAEAAEAAAA6AP3/AAAEAAEAAAA7AP3/AAAFAAAAAAA7APz/AAAEAAEAAAA7APv/AAAEAAEAAAA6APv/AAAFAAEAAAA5APv/AAAEAAEAAAA5APz/AAAEAAEAAAA6APz/AAAEAAEAAAA4APz/AAAFAAAAAAA2APz/AAAEAAEAAAA1APz/AAAFAAEAAAA0APz/AAAEAAEAAAAzAPz/AAAEAAEAAAAzAPv/AAAFAAAAAAA0APv/AAAEAAEAAAA1APv/AAAEAAEAAAAyAPv/AAAEAAEAAAA=")
@@ -261,7 +272,7 @@ collision_enabled = false
 [node name="Player" parent="." unique_id=881314746 instance=ExtResource("3_6761a")]
 physics_interpolation_mode = 1
 z_index = 1
-position = Vector2(-120, 0)
+position = Vector2(756, -99)
 death_slow_down_speed = 200.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=279192240]
@@ -271,9 +282,6 @@ limit_right = 1024
 limit_bottom = 64
 limit_smoothed = true
 position_smoothing_enabled = true
-
-[node name="FallingApple" parent="." unique_id=796879559 instance=ExtResource("10_iav0o")]
-position = Vector2(791, -153)
 
 [node name="NPC1" parent="." unique_id=1487969349 instance=ExtResource("14_wtwp4")]
 position = Vector2(-72, 0)
