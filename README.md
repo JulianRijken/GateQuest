@@ -85,19 +85,20 @@ MoSCoW
 
 ### Must
 1. Player Moving
-2. Kisten
-3. Moving platforms
-4. Kill zone
-5. Coins
-6. Basis Enemy
-7. Intro Level
-8. Game Over Screen (lose condition)
-9. Inventory
-10. Gate for going to next level
-11. Game win screen (win condition) (for now just when finishing intro)
-12. Main Menu / Game Loop (Select level etc, exit game)
-13. Basis NPC
-14. Simple Dialogue
+2. Player Dying
+3. Kisten
+4. Moving platforms
+5. Kill zone
+6. Coins
+7. Basis Enemy
+8. Intro Level
+9. Game Over Screen (lose condition)
+10. Inventory
+11. Gate for going to next level
+12. Game win screen (win condition) (for now just when finishing intro)
+13. Main Menu / Game Loop (Select level etc, exit game)
+14. Basis NPC
+15. Simple Dialogue
 
 ### Should
 1. Lore
