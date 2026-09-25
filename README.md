@@ -31,36 +31,80 @@ Besproken tijdens de les:
 - Hebben over story points / scrum
 
 
-# Goals
+## Week 5 (25 sep)
 
-- [ ] Storyline
-- [ ] 5 Levels
-  - [ ] Main Boss
-  - [ ] More pickups?
-  - [ ] In game store?
-- [ ] Dialoge system
-- [ ] Main Menu (Game UI Flow)
-- [ ] Health System (not just one shot)
-
-- [ ] Publish project on Itch.io so students can play :)
-  - [ ] Screenshots?
-  - [ ] Trailer?
-
-# Features
+# Features / Goals
 **1 story point = 1 les = 2 uur**  
 totaal budget tijdens de les = 40
 totaal budget buiten de les = 20
 
 ~60 punten
+~55 punten over
+
+### Lore
+
+- [ ] (1) Lore / Story
+  - Doel (waarom speel je het spel)
+
+
+### Publishing
+
+- [ ] (2) Publish Game
+  - [ ] (1) itch.io page
+    - [ ] (0.8) Trailer
+    - [ ] (0.2) Screenshots
+
+### Gameplay
 
 - [ ] (2) Dialogue system
+  - [ ] (?) Dubbing
+
 - [ ] (2) UI Flow  
-- [ ] (2) Main Menu
+  - [ ] (2) Main Menu
+
 - [ ] (2) Health System
   - [ ] (0.5) Health UI
   - [ ] (0.5) Damage Sounds
   - [ ] (0.5) Damage Effects
-  
 
-# TODO
-- [X] Add visual keys on screen
+- [ ] 5 Levels
+  - [ ] Level Intro - Ground
+    - [ ] Info about story
+    - [ ] In game tutorial
+      - [ ] Show a key is needed for the gate
+      - [ ] First enemy
+  - [ ] Level 1 - Water
+  - [ ] Level 2 - Cave
+  - [ ] Level 3 - Sky
+  - [ ] Level 4 - Final
+    - [ ] Main Boss
+      -  maybe a snake?
+
+## Order
+MoSCoW
+
+### Must
+1. Player Moving
+2. Kisten
+3. Moving platforms
+4. Kill zone
+5. Coins
+6. Basis Enemy
+7. Intro Level
+8. Game Over Screen (lose condition)
+9. Inventory
+10. Gate for going to next level
+11. Game win screen (win condition) (for now just when finishing intro)
+12. Main Menu / Game Loop (Select level etc, exit game)
+13. Basis NPC
+14. Simple Dialogue
+
+### Should
+1. Lore
+2. Health system
+3. Meaning for the coins
+4. Level 1
+5. Level 2
+6. Settings
+
+... yet to be finished
