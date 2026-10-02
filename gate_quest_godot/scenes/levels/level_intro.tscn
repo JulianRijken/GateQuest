@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dve8hfghfvdfr" path="res://scenes/player.tscn" id="3_vuh7p"]
 
 [node name="Level_1" type="Node2D" unique_id=1708571629]
+position = Vector2(3, -3)
 
 [node name="Level" type="Node" parent="." unique_id=1222991246]
 

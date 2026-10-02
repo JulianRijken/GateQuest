@@ -18,6 +18,9 @@ var force_walk: bool = false
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 @onready var death_sound: AudioStreamPlayer2D = $DeathSound
 
+var debug_normal: Vector2
+var debug_velocity: Vector2
+var debug_impact: Vector2
 
 func do_damage(damage: int) -> void:
 	if is_dead == true:
@@ -86,4 +89,23 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	move_and_slide()
+	var hasCollided := move_and_slide()
+	if hasCollided:
+		var collision: KinematicCollision2D = get_last_slide_collision()
+		var impactDot: float = collision.get_travel().dot(collision.get_normal())
+
+		if impactDot < -8:
+			print(collision.get_travel())
+			debug_velocity = collision.get_travel()
+			debug_normal = collision.get_normal()
+			queue_redraw()
+			face_plant_player()
+		
+func face_plant_player() -> void:
+	print("Paf")
+
+func _draw() -> void:
+	draw_line(Vector2(0,0), debug_normal * 100, Color.BLUE, 2)
+	draw_line(Vector2(0,0), debug_velocity * 100, Color.YELLOW, 2)
+	draw_line(Vector2(0,0), debug_impact * 100, Color.RED, 2)
+	#draw_line(Vector2(0,0),Vector2(0,100), Color.BLUE, 10)
