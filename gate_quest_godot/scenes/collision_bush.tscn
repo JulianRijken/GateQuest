@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cc77o5xi5m3lc"]
+
+[ext_resource type="Texture2D" uid="uid://qqsyx1e7v2fu" path="res://assets/sprites/world_tileset.png" id="1_xr5rj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhjyq"]
+radius = 4.015191
+height = 14.164264
+
+[node name="Collision Bush" type="StaticBody2D" unique_id=2016359296]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=493314587]
+position = Vector2(-1.5, -0.5)
+scale = Vector2(0.98828125, 0.99609375)
+texture = ExtResource("1_xr5rj")
+region_enabled = true
+region_rect = Rect2(16, 96, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=751728741]
+position = Vector2(-1, 3)
+rotation = 1.5552115
+scale = Vector2(0.9960916, 0.988283)
+skew = -0.00024735928
+shape = SubResource("CapsuleShape2D_qhjyq")
