@@ -12,11 +12,15 @@ var is_dead: bool = false
 
 var force_walk: bool = false
 
+var faceplanted: bool = false
+
 @export var death_slow_down_speed: float = 400
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 @onready var death_sound: AudioStreamPlayer2D = $DeathSound
+@onready var faceplant_sound: AudioStreamPlayer2D = $FaceplantSound
+
 
 var debug_normal: Vector2
 var debug_velocity: Vector2
@@ -67,6 +71,9 @@ func _physics_process(delta: float) -> void:
 	#if Input.is_action_just_pressed("roll"):
 		#sprite.play("roll")
 	
+	#reset faceplant
+	if direction != 0:
+		faceplanted = false
 	
 	# Flip sprite to direction
 	if direction > 0:
@@ -76,12 +83,16 @@ func _physics_process(delta: float) -> void:
 	
 	# Animate player
 	if is_on_floor():
-		if direction == 0:
-			sprite.play("idle")
-		else:
-			sprite.play("walk")
+		if faceplanted == true:
+			sprite.play("Faceplant")
+		else: 
+			if direction == 0:
+				sprite.play("idle")
+			else:
+				sprite.play("walk")
 	else:
 		sprite.play("jump")
+	
 	
 	# Apply input to velocity
 	if direction:
@@ -94,7 +105,7 @@ func _physics_process(delta: float) -> void:
 		var collision: KinematicCollision2D = get_last_slide_collision()
 		var impactDot: float = collision.get_travel().dot(collision.get_normal())
 
-		if impactDot < -8:
+		if impactDot < -4:
 			print(collision.get_travel())
 			debug_velocity = collision.get_travel()
 			debug_normal = collision.get_normal()
@@ -103,9 +114,11 @@ func _physics_process(delta: float) -> void:
 		
 func face_plant_player() -> void:
 	print("Paf")
+	faceplanted = true
+	faceplant_sound.play()
 
 func _draw() -> void:
 	draw_line(Vector2(0,0), debug_normal * 100, Color.BLUE, 2)
 	draw_line(Vector2(0,0), debug_velocity * 100, Color.YELLOW, 2)
 	draw_line(Vector2(0,0), debug_impact * 100, Color.RED, 2)
-	#draw_line(Vector2(0,0),Vector2(0,100), Color.BLUE, 10)
+	

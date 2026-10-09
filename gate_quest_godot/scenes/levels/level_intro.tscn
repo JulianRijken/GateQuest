@@ -132,6 +132,8 @@ limit_top = -272
 limit_bottom = 64
 position_smoothing_enabled = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=439661477]
+
 [node name="KillZone" parent="." unique_id=1318448053 instance=ExtResource("7_c6oj7")]
 position = Vector2(569, 67)
 

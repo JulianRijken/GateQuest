@@ -4,10 +4,31 @@
 [ext_resource type="Script" uid="uid://d1qsu4c0tinqu" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="AudioStream" uid="uid://de7jiythx6ive" path="res://assets/sounds/sound.wav" id="3_i3pqv"]
 [ext_resource type="AudioStream" uid="uid://bj56n74o8gq6c" path="res://assets/sounds/game-over.mp3" id="4_dqkch"]
+[ext_resource type="AudioStream" uid="uid://xhf1ens8gk7m" path="res://assets/sounds/universfield-ground-impact-352053.mp3" id="5_qlg0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 6.0
 height = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(128, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(160, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(192, 160, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tkwlq"]
 atlas = ExtResource("1_4flbx")
@@ -161,6 +182,31 @@ region = Rect2(224, 96, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}],
+"loop": false,
+"name": &"Faceplant",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}],
+"loop": true,
+"name": &"Falling",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_tkwlq")
 }, {
 "duration": 1.0,
@@ -307,10 +353,8 @@ shape = SubResource("CapsuleShape2D_onrkg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1238832457]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
-animation = &"dying"
+animation = &"Faceplant"
 autoplay = "idle"
-frame = 4
-frame_progress = 1.0
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1136001721]
 stream = ExtResource("3_i3pqv")
@@ -319,4 +363,9 @@ bus = &"SFX"
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=1804879437]
 stream = ExtResource("4_dqkch")
+bus = &"SFX"
+
+[node name="FaceplantSound" type="AudioStreamPlayer2D" parent="." unique_id=1921431983]
+stream = ExtResource("5_qlg0r")
+pitch_scale = 1.22
 bus = &"SFX"
