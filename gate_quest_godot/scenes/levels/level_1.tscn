@@ -62,20 +62,20 @@ script = ExtResource("6_qxy0u")
 texture = ExtResource("7_excbq")
 metadata/_custom_type_script = "uid://br0f66ylypvrd"
 
-[sub_resource type="Gradient" id="Gradient_wtwp4"]
+[sub_resource type="Gradient" id="Gradient_iwr0g"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_iwr0g"]
-gradient = SubResource("Gradient_wtwp4")
+gradient = SubResource("Gradient_iwr0g")
 fill = 1
 fill_from = Vector2(0.5052083, 0.5329861)
 fill_to = Vector2(0.8420139, 0.13715278)
 
-[sub_resource type="Gradient" id="Gradient_mm8aj"]
+[sub_resource type="Gradient" id="Gradient_bahl2"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_wtwp4"]
-gradient = SubResource("Gradient_mm8aj")
+gradient = SubResource("Gradient_bahl2")
 fill_from = Vector2(0.8732639, 0.6267361)
 fill_to = Vector2(0.484375, 0.1857639)
 
