@@ -272,12 +272,13 @@ collision_enabled = false
 [node name="Player" parent="." unique_id=881314746 instance=ExtResource("3_6761a")]
 physics_interpolation_mode = 1
 z_index = 1
-position = Vector2(-133, 0)
+position = Vector2(-208, 0)
 death_slow_down_speed = 200.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=279192240]
 physics_interpolation_mode = 2
 zoom = Vector2(4, 4)
+limit_left = -208
 limit_right = 1024
 limit_bottom = 64
 limit_smoothed = true
@@ -292,6 +293,10 @@ occluder = SubResource("OccluderPolygon2D_mm8aj")
 
 [node name="Gate" parent="." unique_id=1367748355 instance=ExtResource("17_bahl2")]
 position = Vector2(976, -96)
+
+[node name="Gate2" parent="." unique_id=1503772633 node_paths=PackedStringArray("starting_player") instance=ExtResource("17_bahl2")]
+position = Vector2(-208, 0)
+starting_player = NodePath("../Player")
 
 [connection signal="body_entered" from="Level/HiddenArea/LightReveal" to="Level/HiddenArea" method="_on_light_reveal_body_entered"]
 [connection signal="body_exited" from="Level/HiddenArea/LightReveal" to="Level/HiddenArea" method="_on_light_reveal_body_exited"]
