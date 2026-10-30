@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://d1qsu4c0tinqu" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="AudioStream" uid="uid://de7jiythx6ive" path="res://assets/sounds/sound.wav" id="3_i3pqv"]
 [ext_resource type="AudioStream" uid="uid://bj56n74o8gq6c" path="res://assets/sounds/game-over.mp3" id="4_dqkch"]
-[ext_resource type="AudioStream" uid="uid://xhf1ens8gk7m" path="res://assets/sounds/universfield-ground-impact-352053.mp3" id="5_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://csqq4onivs4b6" path="res://assets/sounds/Fall.wav" id="5_qlg0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 6.0
