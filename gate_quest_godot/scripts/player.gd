@@ -133,8 +133,8 @@ func face_plant_player() -> void:
 	faceplanted = true
 	faceplant_sound.play()
 
-func _draw() -> void:
-	draw_line(Vector2(0,0), debug_normal * 100, Color.BLUE, 2)
-	draw_line(Vector2(0,0), debug_velocity * 100, Color.YELLOW, 2)
-	draw_line(Vector2(0,0), debug_impact * 100, Color.RED, 2)
+#func _draw() -> void:
+	#draw_line(Vector2(0,0), debug_normal * 100, Color.BLUE, 2)
+	#draw_line(Vector2(0,0), debug_velocity * 100, Color.YELLOW, 2)
+	#draw_line(Vector2(0,0), debug_impact * 100, Color.RED, 2)
 	
