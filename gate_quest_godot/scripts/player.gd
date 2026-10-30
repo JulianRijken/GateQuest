@@ -9,10 +9,9 @@ const JUMP_VELOCITY = -300.0
 var rng = RandomNumberGenerator.new()
 
 var is_dead: bool = false
-
 var force_walk: bool = false
-
 var faceplanted: bool = false
+var debug: bool = false
 
 @export var death_slow_down_speed: float = 400
 
@@ -38,12 +37,29 @@ func kill():
 	died.emit()
 	death_sound.play()
 	GameManager.player_died()
-	
-	
-#func _input(event: InputEvent) -> void:
-	#print(event)
+
 
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("debug"):
+		debug = !debug
+	
+	if debug:
+		print("Fly")
+		var horizonal_direction := Input.get_axis("move_left", "move_right")
+		var vertical_direction := Input.get_axis("move_up", "move_down")
+		
+		var speed_multiplier = 2
+		
+		if Input.is_action_pressed("speed"):
+			speed_multiplier = 6
+		
+		velocity.x = horizonal_direction * SPEED * speed_multiplier
+		velocity.y = vertical_direction * SPEED * speed_multiplier
+		move_and_slide()
+		return
+		
+	
 	
 	# Add the gravity.
 	if not is_on_floor():
