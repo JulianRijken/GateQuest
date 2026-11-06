@@ -37,17 +37,17 @@ text = "Play Game"
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=1637926150]
 layout_mode = 2
 theme = ExtResource("1_fsby3")
-text = "Play Game"
+text = "Inventory"
 
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=117021062]
 layout_mode = 2
 theme = ExtResource("1_fsby3")
-text = "Play Game"
+text = "Settings"
 
 [node name="Button4" type="Button" parent="VBoxContainer" unique_id=2079597936]
 layout_mode = 2
 theme = ExtResource("1_fsby3")
-text = "Hello "
+text = "Quit"
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer" unique_id=704102608]
 layout_mode = 2
