@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://g32jl6yqikp6"]
 
+[ext_resource type="Script" uid="uid://ttq4qn0fp80j" path="res://scenes/levels/main_menu.gd" id="1_721jg"]
 [ext_resource type="Theme" uid="uid://0svvhpxy1ejb" path="res://main_theme.tres" id="1_fsby3"]
 [ext_resource type="PackedScene" uid="uid://dgnk68hnnlid7" path="res://scenes/sky_day.tscn" id="2_leamy"]
 
-[node name="Node2D" type="Node2D" unique_id=1927805931]
+[node name="MainMenu" type="Node2D" unique_id=1927805931]
+script = ExtResource("1_721jg")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=359857424]
 
@@ -51,22 +53,23 @@ theme = ExtResource("1_fsby3")
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Button" type="Button" parent="UI/MainMenu/VBoxContainer" unique_id=873878888]
+[node name="Play Button" type="Button" parent="UI/MainMenu/VBoxContainer" unique_id=873878888]
 layout_mode = 2
 theme = ExtResource("1_fsby3")
+action_mode = 0
 text = "Play Game"
 
-[node name="Button2" type="Button" parent="UI/MainMenu/VBoxContainer" unique_id=1637926150]
+[node name="Invetory Button" type="Button" parent="UI/MainMenu/VBoxContainer" unique_id=1637926150]
 layout_mode = 2
 theme = ExtResource("1_fsby3")
 text = "Inventory"
 
-[node name="Button3" type="Button" parent="UI/MainMenu/VBoxContainer" unique_id=117021062]
+[node name="Settings Button" type="Button" parent="UI/MainMenu/VBoxContainer" unique_id=117021062]
 layout_mode = 2
 theme = ExtResource("1_fsby3")
 text = "Settings"
 
-[node name="Button4" type="Button" parent="UI/MainMenu/VBoxContainer" unique_id=2079597936]
+[node name="Quit Button" type="Button" parent="UI/MainMenu/VBoxContainer" unique_id=2079597936]
 layout_mode = 2
 theme = ExtResource("1_fsby3")
 text = "Quit"
@@ -81,3 +84,5 @@ value = 50.0
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1517923078]
 position = Vector2(0, -87)
 zoom = Vector2(3.21, 3.21)
+
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Play Button" to="." method="_on_play_button_pressed"]

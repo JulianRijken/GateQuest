@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://gn8hvbpvndct"]
 
+[ext_resource type="Script" uid="uid://b6xi7ir3i64dh" path="res://scenes/levels/level_end.gd" id="1_cjdve"]
 [ext_resource type="PackedScene" uid="uid://dgnk68hnnlid7" path="res://scenes/sky_day.tscn" id="1_ueqy5"]
 [ext_resource type="TileSet" uid="uid://bujlanysuf07f" path="res://main_tile_set.tres" id="2_q0iob"]
 [ext_resource type="FontFile" uid="uid://dc32unk737b2b" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_ueqy5"]
@@ -46,18 +47,6 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/ColorRect:color")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_xpf06"]
 resource_name = "end_scene"
@@ -98,17 +87,19 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
-tracks/3/type = "value"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(8.6, 10.099999),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+"times": PackedFloat32Array(7.4333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"end_level_animation_end"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ueqy5"]
@@ -119,7 +110,8 @@ _data = {
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ibugp"]
 
-[node name="LevelIntro" type="Node2D" unique_id=1708571629]
+[node name="End Level" type="Node2D" unique_id=1708571629]
+script = ExtResource("1_cjdve")
 
 [node name="Level" type="Node" parent="." unique_id=1222991246]
 
@@ -159,13 +151,6 @@ offset_bottom = -157.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_q0iob")
 text = "Thank you for playing"
-
-[node name="ColorRect" type="ColorRect" parent="AnimationPlayer" unique_id=1757282640]
-offset_left = -126.0
-offset_top = -316.0
-offset_right = 457.0
-offset_bottom = 83.0
-color = Color(0, 0, 0, 0)
 
 [node name="Player" parent="." unique_id=881314746 instance=ExtResource("4_js5h2")]
 physics_interpolation_mode = 1
