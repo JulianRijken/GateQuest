@@ -20,7 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		inventory.add_item(ITEM_COIN)
 	
 	if Input.is_key_pressed(KEY_4):
-		load_level_transition(1)
+		load_next_level()
 		
 	if Input.is_key_pressed(KEY_O):
 		const ITEM_CUP_OF_TEA = preload("uid://dc3auqaseylpw")
@@ -41,13 +41,20 @@ func _on_timer_timeout() -> void:
 
 
 func load_level(level: int) -> void:
-	level_index = level
+	
+	# Force main menu when going out of range
+	if level > 3:
+		level = 0
+	
+	level_index = level	
 	match level:
 		0:
-			get_tree().change_scene_to_file("res://scenes/levels/level_intro.tscn")	
+			get_tree().change_scene_to_file("res://scenes/levels/main_menu.tscn")	
 		1:
-			get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")	
+			get_tree().change_scene_to_file("res://scenes/levels/level_intro.tscn")	
 		2:
+			get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")	
+		3:
 			get_tree().change_scene_to_file("res://scenes/levels/level_end.tscn")	
 
 func load_level_transition(level: int) -> void:
@@ -56,6 +63,9 @@ func load_level_transition(level: int) -> void:
 	transition_tween.tween_property(scene_transition_fade, "color", Color(0,0,0,1), 1)
 	transition_tween.tween_callback(load_level.bind(level)) 
 	transition_tween.tween_property(scene_transition_fade, "color", Color(0,0,0,0), 1)
+
+func load_next_level() -> void:
+	load_level(level_index + 1)
 
 func load_next_level_transition() -> void:
 	load_level_transition(level_index + 1)
