@@ -198,10 +198,6 @@ position = Vector2(392, 6)
 z_index = -30
 position = Vector2(945, -33)
 
-[node name="Chest3" parent="Level" unique_id=1512582497 instance=ExtResource("5_s8va5")]
-z_index = -30
-position = Vector2(929, -96)
-
 [node name="Slime" parent="Level" unique_id=1123910512 instance=ExtResource("8_excbq")]
 position = Vector2(729, -96)
 
