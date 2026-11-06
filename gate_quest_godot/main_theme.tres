@@ -36,8 +36,22 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58jnp"]
+bg_color = Color(0.14509805, 0.14509805, 0.14509805, 0.81960785)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8500505, 0.85005057, 0.85005045, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_offset = Vector2(30, 30)
+
 [resource]
 default_font = ExtResource("1_470mv")
 Button/styles/disabled = SubResource("StyleBoxFlat_a2l2q")
 Button/styles/normal = SubResource("StyleBoxFlat_470mv")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_0omi4")
+Panel/styles/panel = SubResource("StyleBoxFlat_58jnp")
