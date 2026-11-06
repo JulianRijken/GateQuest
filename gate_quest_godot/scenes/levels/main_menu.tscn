@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://g32jl6yqikp6"]
 
-[ext_resource type="Script" uid="uid://ttq4qn0fp80j" path="res://scenes/levels/main_menu.gd" id="1_721jg"]
+[ext_resource type="Script" path="res://scenes/levels/main_menu.gd" id="1_721jg"]
 [ext_resource type="Theme" uid="uid://0svvhpxy1ejb" path="res://main_theme.tres" id="1_fsby3"]
 [ext_resource type="PackedScene" uid="uid://dgnk68hnnlid7" path="res://scenes/sky_day.tscn" id="2_leamy"]
 
@@ -56,7 +56,6 @@ alignment = 1
 [node name="Play Button" type="Button" parent="UI/MainMenu/VBoxContainer" unique_id=873878888]
 layout_mode = 2
 theme = ExtResource("1_fsby3")
-action_mode = 0
 text = "Play Game"
 
 [node name="Invetory Button" type="Button" parent="UI/MainMenu/VBoxContainer" unique_id=1637926150]
