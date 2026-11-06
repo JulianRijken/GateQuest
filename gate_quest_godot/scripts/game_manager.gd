@@ -48,7 +48,7 @@ func load_level(level: int) -> void:
 		1:
 			get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")	
 		2:
-			get_tree().change_scene_to_file("res://scenes/levels/level_2.tscn")	
+			get_tree().change_scene_to_file("res://scenes/levels/level_end.tscn")	
 
 func load_level_transition(level: int) -> void:
 	var transition_tween = create_tween()
