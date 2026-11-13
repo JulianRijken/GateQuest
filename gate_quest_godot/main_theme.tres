@@ -62,6 +62,9 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a2l2q"]
+load_path = "res://.godot/imported/slider_grabber.png-3f71d31f2abfa7f13b5fa23129d5a0c5.ctex"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0omi4"]
 bg_color = Color(0.43326566, 0.43326566, 0.4332655, 1)
 corner_radius_top_left = 5
@@ -91,6 +94,7 @@ Button/styles/hover_pressed = SubResource("StyleBoxFlat_a2l2q")
 Button/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_a2l2q")
 Button/styles/normal = SubResource("StyleBoxFlat_470mv")
 HSlider/icons/grabber = ExtResource("1_a2l2q")
+HSlider/icons/grabber_highlight = SubResource("CompressedTexture2D_a2l2q")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_0omi4")
 HSlider/styles/grabber_area_highlight = null
 Panel/styles/panel = SubResource("StyleBoxFlat_58jnp")
