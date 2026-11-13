@@ -28,31 +28,41 @@ func _unhandled_input(event: InputEvent) -> void:
 		inventory.add_item(ITEM_CUP_OF_TEA)
 		
 	if Input.is_action_just_pressed("Pause"):
-		if game_over_animation.is_playing() == false:
-			if pause_ui.visible == false:
-				pause_ui.visible = true
-				#inventory_animation.play("Pause")
-				get_tree().paused = true
-			else:
-				#inventory_animation.play("close_inventory")
-				pause_ui.visible = false
-				get_tree().paused = false
+		if inventory_ui.visible == false && game_over_animation.is_playing() == false && level_index != 0:
+			pause_game(is_game_paused() == false)
 	
 	if Input.is_action_just_pressed("open_inventory"):
-		if game_over_animation.is_playing() == false:
-			if inventory_ui.visible == false:
-				inventory_animation.play("open_inventory")
-				get_tree().paused = true
-				inventory_ui.update(inventory);
-			else:
-				inventory_animation.play("close_inventory")
-				get_tree().paused = false
+		if pause_ui.visible == false && game_over_animation.is_playing() == false && level_index != 0:
+			open_inventory(is_inventroy_open() == false)
+
+
+func is_game_paused() -> bool:
+	return get_tree().paused
+
+func pause_game(paused: bool) -> void:
+	pause_ui.visible = paused
+	get_tree().paused = paused
+
+func is_inventroy_open() -> bool:
+	return inventory_ui.visible
+
+func open_inventory(open: bool) -> void:
+	if open:
+		inventory_animation.play("open_inventory")
+		get_tree().paused = true
+		inventory_ui.update(inventory);
+	else:
+		inventory_animation.play("close_inventory")
+		get_tree().paused = false
 
 func _on_timer_timeout() -> void:
 	restart_game()
 
 
 func load_level(level: int) -> void:
+	
+	# Force un pause the game
+	pause_game(false)
 	
 	# Force main menu when going out of range
 	if level > 3:
