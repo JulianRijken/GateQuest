@@ -49,7 +49,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_oo155"]
 resource_name = "game_over"
-length = 2.6
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -95,7 +95,7 @@ tracks/3/path = NodePath("ColorRect:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 3.0333333),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -331,7 +331,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -410.0
 offset_top = -467.755
-offset_right = 410.0005
+offset_right = 410.00195
 offset_bottom = -371.75488
 grow_horizontal = 2
 grow_vertical = 2
