@@ -86,3 +86,4 @@ zoom = Vector2(3.21, 3.21)
 
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Invetory Button" to="." method="_on_invetory_button_pressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Quit Button" to="." method="_on_quit_button_pressed"]

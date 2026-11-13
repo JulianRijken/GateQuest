@@ -6,3 +6,6 @@ func _on_play_button_pressed() -> void:
 
 #func _on_invetory_button_pressed() -> void:
 	#GameManager.open_inventory(true)
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
