@@ -3,6 +3,7 @@ extends Node
 @onready var label: Label = $CanvasLayer/Label
 @onready var game_over_animation: AnimationPlayer = $GameOverAnimation
 @onready var inventory_ui: InventoryUI  = $CanvasLayer/InventoryUI
+@onready var pause_ui: PauseUI  = $CanvasLayer/PauseUI
 @onready var inventory_animation: AnimationPlayer = $InventoryAnimation
 
 @onready var scene_transition_fade: ColorRect = $CanvasLayer/SceneTransition/Fade
@@ -25,6 +26,17 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_O):
 		const ITEM_CUP_OF_TEA = preload("uid://dc3auqaseylpw")
 		inventory.add_item(ITEM_CUP_OF_TEA)
+		
+	if Input.is_action_just_pressed("Pause"):
+		if game_over_animation.is_playing() == false:
+			if pause_ui.visible == false:
+				pause_ui.visible = true
+				#inventory_animation.play("Pause")
+				get_tree().paused = true
+			else:
+				#inventory_animation.play("close_inventory")
+				pause_ui.visible = false
+				get_tree().paused = false
 	
 	if Input.is_action_just_pressed("open_inventory"):
 		if game_over_animation.is_playing() == false:
