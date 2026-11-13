@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://0svvhpxy1ejb"]
 
 [ext_resource type="FontFile" uid="uid://x2iclcplexev" path="res://assets/fonts/PixelOperator8.ttf" id="1_470mv"]
-[ext_resource type="Texture2D" uid="uid://b0wt0ld4p78vc" path="res://assets/sprites/coin_texture.tres" id="1_a2l2q"]
+[ext_resource type="Texture2D" uid="uid://d02xn3tvt73p8" path="res://assets/sprites/slider_grabber.png" id="1_a2l2q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_466ly"]
 content_margin_left = 8.0
@@ -90,7 +90,7 @@ Button/styles/hover_mirrored = SubResource("StyleBoxFlat_a2l2q")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_a2l2q")
 Button/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_a2l2q")
 Button/styles/normal = SubResource("StyleBoxFlat_470mv")
+HSlider/icons/grabber = ExtResource("1_a2l2q")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_0omi4")
 HSlider/styles/grabber_area_highlight = null
-HSlider/styles/slider = null
 Panel/styles/panel = SubResource("StyleBoxFlat_58jnp")
