@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cwvjw2asyy78b"]
+
+[ext_resource type="Script" uid="uid://bl14iwicicmij" path="res://inventory/pause_ui.gd" id="1_w01e1"]
+
+[node name="PauseUI" type="Panel" unique_id=1958192523]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w01e1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1197866463]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
