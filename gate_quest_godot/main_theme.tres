@@ -1,6 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://0svvhpxy1ejb"]
 
 [ext_resource type="FontFile" uid="uid://x2iclcplexev" path="res://assets/fonts/PixelOperator8.ttf" id="1_470mv"]
+[ext_resource type="Texture2D" uid="uid://b0wt0ld4p78vc" path="res://assets/sprites/coin_texture.tres" id="1_a2l2q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_466ly"]
 content_margin_left = 8.0
